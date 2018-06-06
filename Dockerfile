@@ -33,4 +33,5 @@ RUN cd RetroShare && qmake && make && make install
 RUN cd .. && rm -rf RetroShare
 
 # Start retroshare with nogui option
+USER retroshare
 ENTRYPOINT [ "/usr/bin/retroshare-nogui", "--webinterface", "9090", "--docroot", "/usr/share/retroshare/webui/", "--http-allow-all" ]
